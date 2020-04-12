@@ -1,0 +1,21 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<header>
+    <div class="header-section">
+        <div class="col-auto page-logo">
+            <img tabindex="0" (click)="redirect('')" src="./assets/images/1Tab.png" [attr.aria-label]="1-tab"
+                alt="1-tab" class="im-cursor-default" role="img" />
+        </div>
+        <div class="col-auto page-description">
+            Inventory Manager
+        </div>
+        <div class="add-section">
+            <button class="btn" id="quickAddButton" (click)="redirect('quickAdd')">Quick Add</button>
+            <button class="btn" id="customAddButton" (click)="redirect('add')">Custom Add</button>
+        </div>
+    </div>
+    <div class="title-wrapper">
+        <span class="page-title">
+            {{pageTitle}}
+        </span>
+    </div>
+</header>

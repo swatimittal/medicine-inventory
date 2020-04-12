@@ -1,0 +1,47 @@
+<app-header [pageTitle]="'Quick Add Medicine'"></app-header>
+
+<!-- quick add starts here -->
+<div>
+    <div class="row col-md-12 quick-add-wrapper">
+        <div class="row col-md-12 header">
+            <div class="col-md-1"></div>
+            <div class="col-md-4">
+                <span>Medicine Name</span>
+            </div>
+            <div class="col-md-3">
+                <label>Quantity</label>
+            </div>
+            <div class="col-md-3">
+                <label>Price/10 Tab</label>
+            </div>
+        </div>
+        <ul role="list" *ngIf="quickAddList.length">
+            <li class="row col-md-12" *ngFor="let item of quickAddList; let i = index">
+                <div class="col-md-1">
+                    <input type="checkbox" class="checkbox" id="{{'checkbox' + i}}">
+                </div>
+                <div class="col-md-4">
+                    <span>{{item.medicineName}}</span>
+                </div>
+                <div class="col-md-3">
+                    <input type="number" class="quantity" id="{{'quantity-' + i}}" value="{{item.quantity}}">
+                    <span class="errorMessage" *ngIf="item.quantityMessage">Quantity is
+                        required.</span>
+                </div>
+                <div class="col-md-3">
+                    <input type="number" class="price" id="{{'price-' + i}}" value="{{item.price}}">
+                    <span class="errorMessage" *ngIf="item.priceMessage">Price is required.</span>
+                </div>
+            </li>
+        </ul>
+        <ul *ngIf="quickAddList.length === 0">
+            <li>No Records to Show</li>
+        </ul>
+        <span class="errorMessage" *ngIf="!checkBoxChecked">Select a row to add.</span>
+    </div>
+    <div class="button-wrapper row col-md-8">
+        <button class="btn" type="submit" (click)="addMed()">Add</button>
+        <button class="btn" type="submit" (click)="cancel()">Cancel</button>
+    </div>
+</div>
+<!-- quick add ends -->

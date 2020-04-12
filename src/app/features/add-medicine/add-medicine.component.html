@@ -1,0 +1,39 @@
+<app-header [pageTitle]="pageTitle"></app-header>
+<!-- Add form starts -->
+<div class="container">
+    <form [formGroup]="createMedicineForm">
+        <div class="form-wrapper col-md-8">
+            <div class="row form-row">
+                <label class="col-md-6">Medicine Name *</label>
+                <input class="col-md-6" type="text" maxlength="50" placeholder="Name" formControlName="medicineName">
+                <span class="errorMessage" *ngIf="submitted && createMedicineForm.controls.medicineName.invalid">Name is
+                    required.</span>
+            </div>
+            <div class="row form-row">
+                <label class="col-md-6">Medicine Description *</label>
+                <input class="col-md-6" type="text" maxlength="250" placeholder="Description"
+                    formControlName="medicineDescription">
+                <span class="errorMessage"
+                    *ngIf="submitted && createMedicineForm.controls.medicineDescription.invalid">Name is
+                    required.</span>
+            </div>
+            <div class="row form-row">
+                <label class="col-md-6">Quantity</label>
+                <input class="col-md-6" type="number" placeholder="eg.123" formControlName="quantity">
+            </div>
+            <div class="row form-row">
+                <label class="col-md-6">Price *</label>
+                <input class="col-md-6" type="number" placeholder="eg.123" formControlName="price">
+                <span class="errorMessage" *ngIf="submitted && isFieldValid()">{{priceErrorMessage}}</span>
+            </div>
+
+            <div class="button-wrapper row col-md-8">
+                <button class="btn" type="submit" (click)="addNewMed(urlConstants.list)">{{buttonLabel}}</button>
+                <button class="btn" type="submit" (click)="addNewMed(urlConstants.quickAdd)" *ngIf="showButton()">Add to
+                    Quick Add</button>
+                <button class="btn" type="submit" (click)="cancelAdd()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- Add form ends -->

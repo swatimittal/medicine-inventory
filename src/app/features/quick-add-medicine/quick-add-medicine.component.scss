@@ -1,0 +1,37 @@
+@import '../../../assets/scss/global.scss';
+
+.quick-add-wrapper {
+    margin: 1% calc((100% - 800px)/2);
+    width: 800px;
+
+    .header {
+        padding: 0;
+    }
+
+    ul {
+        padding: 0;
+        width: 100%;
+
+        li {
+            padding: 5px 0;
+        }
+
+        .errorMessage {
+            margin-left: 0;
+        }
+
+        .checkbox {
+            background-color: white;
+            border: 0;
+            height: 16px;
+            width: 16px;
+            font-weight: 400;
+            margin: 0;
+        }
+    }
+}
+
+.button-wrapper {
+    justify-content: center;
+    margin: 0 16.67%
+}

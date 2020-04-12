@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+<!-- options for list data start -->
+<div class="row col-md-6 button-container">
+    <div>
+        <div class="button-wrapper">
+            <button class="btn row-options" type="button" [class.disabled]="getSelectedRowsLength()"
+                [disabled]="getSelectedRowsLength()" [attr.aria-label]="'edit-row'" (click)="getSelectedRows('edit')">
+                <img [attr.aria-label]="'edit-row'" src="../../../assets/images/edit.png" role="img" />
+            </button>
+        </div>
+        <div class="button-wrapper">
+            <button class="btn row-options" type="button" [class.disabled]="getSelectedRowsLength()"
+                [disabled]="getSelectedRowsLength()" [attr.aria-label]="'clone-row'" (click)="getSelectedRows('clone')">
+                <img [attr.aria-label]="'clone-row'" src="../../../assets/images/clone.png" role="img" />
+            </button>
+        </div>
+        <div class="button-wrapper">
+            <button class="btn row-options" type="button" [class.disabled]="getSelectedRowsLength()"
+                [disabled]="getSelectedRowsLength()" [attr.aria-label]="'delete-row'"
+                (click)="getSelectedRows('delete')">
+                <img [attr.aria-label]="'delete-row'" src="../../../assets/images/delete.png" role="img" />
+            </button>
+        </div>
+    </div>
+</div>
+<!-- data grid -->
+<div>
+    <ag-grid-angular #agGrid class="ag-theme-balham" [rowData]="listData" [columnDefs]="columnDefs"
+        [rowSelection]="single">
+    </ag-grid-angular>
+</div>

@@ -1,0 +1,29 @@
+.button-container {
+    margin: 1% calc((100% - 800px)/2);
+    justify-content: flex-end;
+
+    .button-wrapper {
+        float: right;
+
+        .row-options {
+            padding: 0;
+            margin: 5px;
+
+            &.disabled {
+                cursor: default;
+            }
+
+            img {
+                height: 30px;
+                width: 30px;
+            }
+        }
+    }
+}
+
+ag-grid-angular {
+    margin: 1% calc((100% - 800px)/2);
+    width: 800px;
+    height: 300px;
+    font-size: 14px;
+}
